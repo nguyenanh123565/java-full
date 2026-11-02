@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:8080
+
+### Ghi dự đoán, gửi request này hai lần; GET chỉ đọc dữ liệu mẫu
+GET {{baseUrl}}/products/10
+
+### PUT tới echo: quan sát ngữ nghĩa request, không lưu product
+PUT {{baseUrl}}/echo
+Content-Type: application/json
+
+{"theme":"dark"}
+
+### Lặp cùng PUT; echo không phải bằng chứng triển khai idempotency persistence
+PUT {{baseUrl}}/echo
+Content-Type: application/json
+
+{"theme":"dark"}

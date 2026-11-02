@@ -1,0 +1,3 @@
+@Query("select p from Product p where p.price >= :minimum order by p.id")
+List<Product> findExpensive(@Param("minimum") BigDecimal minimum);
+// Import @Query/@Param từ Spring Data; tên Product/price là Java mapping.

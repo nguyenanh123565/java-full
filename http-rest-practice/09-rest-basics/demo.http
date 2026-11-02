@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:8080
+
+### Tài nguyên collection và biểu diễn danh sách
+GET {{baseUrl}}/products
+Accept: application/json
+
+### Identity khác: một phần tử
+GET {{baseUrl}}/products/10
+Accept: application/json
+
+### HEAD đọc metadata, response không có body
+HEAD {{baseUrl}}/products/10

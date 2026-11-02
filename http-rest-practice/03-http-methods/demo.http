@@ -1,0 +1,25 @@
+@baseUrl = http://localhost:8080
+
+### Lấy representation có sẵn.
+GET {{baseUrl}}/products/10
+
+### Quan sát header mà không nhận body.
+HEAD {{baseUrl}}/products/10
+
+### Ba request sau chỉ phản chiếu method/body, không thay đổi nghiệp vụ.
+PUT {{baseUrl}}/echo
+Content-Type: application/json
+
+{"note":"PUT observation only"}
+
+### PATCH ở echo không parse patch document.
+PATCH {{baseUrl}}/echo
+Content-Type: application/json
+
+{"note":"PATCH observation only"}
+
+### Echo không xóa sản phẩm.
+DELETE {{baseUrl}}/echo
+
+### Quan sát OPTIONS; đây chưa phải bài CORS.
+OPTIONS {{baseUrl}}/echo

@@ -1,0 +1,21 @@
+@baseUrl = http://localhost:8080
+
+### JSON có object, boolean và array. Echo chỉ giữ nguyên body dưới dạng chuỗi.
+POST {{baseUrl}}/echo
+Content-Type: application/json
+Accept: application/json
+
+{"label":"sensor","enabled":true,"tags":["demo","lab"]}
+
+### Nội dung cố tình không phải JSON hợp lệ; echo không parse hay validate.
+# Vì sao vẫn nhận response 200? Phân biệt echo với một API nghiệp vụ.
+POST {{baseUrl}}/echo
+Content-Type: application/json
+
+{"label":"sensor",}
+
+### Cùng body nhưng khai báo text/plain; echo vẫn phản chiếu nội dung thô.
+POST {{baseUrl}}/echo
+Content-Type: text/plain
+
+{"label":"sensor"}

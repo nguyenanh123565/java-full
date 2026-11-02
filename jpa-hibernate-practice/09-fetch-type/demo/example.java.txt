@@ -1,0 +1,6 @@
+@ManyToOne(fetch = FetchType.LAZY)
+private Category category;
+
+// Trong method @Transactional(readOnly = true):
+String categoryName = product.getCategory() == null ? null : product.getCategory().getName();
+// Getter có thể kích hoạt SELECT. Không mang entity ra ngoài scope để đọc tiếp.

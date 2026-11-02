@@ -1,0 +1,4 @@
+public interface ProductRepository extends JpaRepository<Product, Long> {
+    List<Product> findAllByOrderByIdAsc();
+    // TODO ở exercise mới thêm method khác; đây là method có trong reference.
+}

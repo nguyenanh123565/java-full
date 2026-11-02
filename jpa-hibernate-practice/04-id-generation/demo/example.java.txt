@@ -1,0 +1,5 @@
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+// Đối chiếu JDBC: INSERT ... RETURNING id.
+// Sequence là chiến lược khác, không áp dụng đồng thời vào cùng field.

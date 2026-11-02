@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:8080
+
+### Cookie do bạn tự viết: chỉ quan sát header, KHÔNG có server session
+GET {{baseUrl}}/echo
+Cookie: sid=FAKE-SESSION-ID; theme=dark
+
+### Token giả, không phải JWT hợp lệ; lab không verify hoặc decode
+GET {{baseUrl}}/echo
+Authorization: Bearer FAKE-DEMO-TOKEN-NOT-A-REAL-JWT
+
+### Không có cookie/token: so sánh request headers được echo
+GET {{baseUrl}}/echo

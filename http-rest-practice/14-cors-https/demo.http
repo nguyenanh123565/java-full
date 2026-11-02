@@ -1,0 +1,23 @@
+@baseUrl = http://localhost:8080
+
+### Preflight thủ công; .http client không tự thực thi policy CORS như browser
+OPTIONS {{baseUrl}}/cors
+Origin: http://localhost:3000
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: content-type,x-lab-header
+
+### Request thật sau preflight; lab không thực hiện nghiệp vụ ghi dữ liệu
+POST {{baseUrl}}/cors
+Origin: http://localhost:3000
+Content-Type: application/json
+X-Lab-Header: observation-only
+
+{"sample":"cors"}
+
+### GET với origin allowlist
+GET {{baseUrl}}/cors
+Origin: http://localhost:3000
+
+### GET với origin khác; quan sát headers và so sánh với browser
+GET {{baseUrl}}/cors
+Origin: http://localhost:3001

@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:8080
+
+### JSON là kiểu nội dung client muốn nhận.
+GET {{baseUrl}}/products/10
+Accept: application/json
+
+### Quan sát headers; chuỗi Bearer bên dưới chỉ là dữ liệu giả.
+POST {{baseUrl}}/echo
+Content-Type: text/plain
+Accept: application/json
+Authorization: Bearer not-a-real-token
+X-Lab-Header: KeepMyCase
+
+metadata demonstration
+
+### Tên header không phân biệt hoa thường; giá trị được giữ nguyên.
+GET {{baseUrl}}/echo
+accept: application/json
+x-lab-header: AnotherValue

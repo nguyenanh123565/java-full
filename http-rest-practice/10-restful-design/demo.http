@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:8080
+
+### Lab chỉ cung cấp danh sách mẫu; chưa triển khai filter nghiệp vụ
+GET {{baseUrl}}/products
+Accept: application/json
+
+### Echo cho thấy query nằm ở đâu; không thực hiện lọc thật
+GET {{baseUrl}}/echo?category=robot&minPrice=5000000
+Accept: application/json
+
+### Quan sát PATCH và body, không cập nhật product
+PATCH {{baseUrl}}/echo
+Content-Type: application/merge-patch+json
+
+{"stock":8}

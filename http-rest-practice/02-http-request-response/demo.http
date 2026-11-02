@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:8080
+
+### Trước khi gửi, xác định method, URL, hai headers và body.
+POST {{baseUrl}}/echo
+Content-Type: application/json
+Accept: application/json
+
+{"note":"learn request structure"}
+
+### Response chỉ có status và headers.
+HEAD {{baseUrl}}/products/10
+
+### Một request GET thông thường không cần body.
+GET {{baseUrl}}/products/10
+Accept: application/json

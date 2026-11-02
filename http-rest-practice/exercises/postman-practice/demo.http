@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:8080
+
+### Có thể nhập thủ công request này vào Postman
+GET {{baseUrl}}/health
+Accept: application/json
+
+### Sản phẩm mẫu trong memory
+GET {{baseUrl}}/products/10
+Accept: application/json
+
+### Đọc headers mà không lấy body
+HEAD {{baseUrl}}/products/10
+
+### Query và custom header
+GET {{baseUrl}}/echo?search=robot%20hut%20bui&limit=3
+Accept: application/json
+X-Lab-Header: postman
+
+### Body được echo dưới dạng string
+POST {{baseUrl}}/echo
+Content-Type: application/json
+
+{"name":"Robot","stock":3,"active":true}
+
+### Status simulator, không phải thao tác xóa
+GET {{baseUrl}}/status/204
+
+### Status simulator, không phải lỗi order thật
+GET {{baseUrl}}/status/409
+
+### So sánh với browser trong bài 14
+GET {{baseUrl}}/cors
+Origin: http://localhost:3000

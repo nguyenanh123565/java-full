@@ -1,0 +1,4 @@
+// Ngữ cảnh: trong method @Transactional của service ở reference.
+Product product = entityManager.find(Product.class, 1L);
+// entityManager được inject bằng @PersistenceContext; đây là đoạn đọc để đối chiếu,
+// không phải file Java độc lập. Product có thể là null nếu id không tồn tại.

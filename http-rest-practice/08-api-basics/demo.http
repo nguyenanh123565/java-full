@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:8080
+
+### Dự đoán: endpoint này có nhất thiết đọc database không?
+GET {{baseUrl}}/health
+Accept: application/json
+
+### Dự đoán: method + path, status, Content-Type và kiểu body
+GET {{baseUrl}}/products/10
+Accept: application/json
+
+### Quan sát giao kèo của echo: receivedBody là chuỗi, không phải object đã parse
+POST {{baseUrl}}/echo
+Content-Type: application/json
+Accept: application/json
+
+{"example":"contract-observation","quantity":2}

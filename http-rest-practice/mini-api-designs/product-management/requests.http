@@ -1,0 +1,11 @@
+# Skeleton request; tự viết đầy đủ method, URL, headers, body.
+# Lab chỉ có GET collection và product mẫu id 10; filter/CRUD CHƯA TRIỂN KHAI.
+# TODO: Request list có pagination và sort ổn định.
+# TODO: Request get theo id.
+# TODO: Request tìm tên với encoding đúng.
+# TODO: Request filter category và khoảng giá.
+# TODO: Request create product.
+# TODO: Request thay toàn bộ representation product.
+# TODO: Request chỉ sửa stock và request gửi lặp.
+# TODO: Request xóa/ngừng bán product đã có trong lịch sử order.
+# TODO: Request validation lỗi và request cập nhật xung đột.

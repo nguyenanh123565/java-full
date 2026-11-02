@@ -1,0 +1,7 @@
+@Transactional
+public void rename(long id, String name) {
+    Product product = products.findById(id).orElseThrow();
+    product.updateDetails(name, product.getPrice(), product.getStock());
+    // Managed entity: dirty checking lúc flush; không cần products.save(product).
+}
+// @Transactional là org.springframework.transaction.annotation.Transactional.

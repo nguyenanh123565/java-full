@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: learning_backend
+      POSTGRES_USER: learner
+      POSTGRES_PASSWORD: learning_only
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8081:8080"
+    environment:
+      JDBC_URL: jdbc:postgresql://db:5432/learning_backend
+      JDBC_USER: learner
+      JDBC_PASSWORD: learning_only
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pg_data:

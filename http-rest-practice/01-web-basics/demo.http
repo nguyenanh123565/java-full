@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:8080
+
+### Server còn hoạt động không? Chạy Java lab theo README gốc trước.
+GET {{baseUrl}}/health
+Accept: application/json
+
+### HEAD cho phép quan sát status và headers, không nhận body.
+HEAD {{baseUrl}}/health
+
+### Quan sát nội dung mà backend nhận từ một client HTTP.
+GET {{baseUrl}}/echo
+X-Lab-Header: web-basics-demo

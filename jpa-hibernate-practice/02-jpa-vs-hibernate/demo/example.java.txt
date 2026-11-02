@@ -1,0 +1,4 @@
+// ProductRepository.java trong reference
+public interface ProductRepository extends JpaRepository<Product, Long> {
+    // Spring Data tạo proxy repository; Hibernate mới thực thi mapping JPA.
+}

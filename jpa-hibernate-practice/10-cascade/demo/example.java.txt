@@ -1,0 +1,5 @@
+// Ví dụ trong Order entity ở một lab mở rộng riêng:
+@OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST, orphanRemoval = true)
+private List<OrderItem> items = new ArrayList<>();
+// OrderItem.order là owning side của FK; cần đồng bộ cả hai phía.
+// Reference Product.category KHÔNG có cascade để giữ Category dùng chung.

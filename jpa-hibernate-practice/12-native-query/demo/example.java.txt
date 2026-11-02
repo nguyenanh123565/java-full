@@ -1,0 +1,3 @@
+@Query(value = "select count(*) from learning_jpa.products where price >= :minimum", nativeQuery = true)
+long countExpensiveNative(@Param("minimum") BigDecimal minimum);
+// Method này đã có trong ProductRepository reference; gọi thêm ở bản sao CLI nếu muốn đo.

@@ -1,0 +1,9 @@
+// Mở rộng riêng, không chép vào reference khi chưa tạo schema tương ứng.
+@ManyToMany
+@JoinTable(name = "product_tags", schema = "learning_jpa",
+    joinColumns = @JoinColumn(name = "product_id"),
+    inverseJoinColumns = @JoinColumn(name = "tag_id"))
+private Set<Tag> tags = new HashSet<>();
+
+// Trong Tag: @ManyToMany(mappedBy = "tags") private Set<Product> products;
+// Cần entity Tag đầy đủ; không cascade REMOVE sang tag dùng chung.

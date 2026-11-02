@@ -1,0 +1,10 @@
+# Skeleton request cho contract bạn tự viết; CHƯA TRIỂN KHAI trong lab.
+# TODO: Request đọc user theo id.
+# TODO: Request đọc collection users có phân trang.
+# TODO: Request tạo user với headers và JSON do bạn chọn.
+# TODO: Request cập nhật riêng tên.
+# TODO: Request cập nhật representation có thể chỉnh sửa.
+# TODO: Request xem orders của user có kiểm tra quyền.
+# TODO: Request ngừng hoạt động user đã có order.
+# TODO: Request thiếu xác thực và request user A truy cập user B.
+# TODO: Ghi dự đoán status/body/headers trong file my-contract.md.

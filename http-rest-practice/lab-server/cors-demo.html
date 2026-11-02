@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quan sát CORS trong browser</title>
+<style>
+body{font:17px/1.6 system-ui,sans-serif;max-width:850px;margin:40px auto;padding:0 20px;color:#17324d}
+input,button{font:inherit;padding:8px;margin:5px 3px} input{width:280px}
+pre{white-space:pre-wrap;background:#eef3f7;padding:16px;border-radius:8px}
+</style>
+<h1>Quan sát CORS trong browser</h1>
+<p>Origin hiện tại: <strong id="origin"></strong>. Lab chỉ cho phép <code>http://localhost:3000</code>.</p>
+<p>Mở DevTools → Network/Console. Ghi dự đoán trước khi bấm. Trang này chỉ là dụng cụ quan sát HTTP.</p>
+<label>Backend: <input id="baseUrl" value="http://localhost:8080"></label>
+<p>
+<button type="button" id="simple">GET /cors</button>
+<button type="button" id="preflight">POST /cors — JSON + header</button>
+<button type="button" id="missing">GET /health — thiếu CORS header</button>
+</p>
+<pre id="result">TODO: dự đoán status, có preflight không và JavaScript có đọc response được không.</pre>
+<p>Nếu fetch bị chặn, request vẫn có thể xuất hiện với HTTP 200 trong Network. CORS không đồng nghĩa request không đến server.</p>
+<script>
+document.querySelector('#origin').textContent = location.origin;
+async function observe(path, options = {}) {
+  const result = document.querySelector('#result');
+  const base = document.querySelector('#baseUrl').value.trim().replace(/\/$/, '');
+  result.textContent = 'Đang gửi request…';
+  try {
+    const response = await fetch(base + path, options);
+    result.textContent = JSON.stringify({
+      origin: location.origin, status: response.status, type: response.type,
+      contentType: response.headers.get('content-type'), body: await response.text()
+    }, null, 2);
+  } catch (error) {
+    result.textContent = 'Browser không đọc được response: ' + error.message +
+      '\nKiểm tra Network/Console: CORS, server chưa chạy hoặc sai port đều có thể gây lỗi fetch.';
+  }
+}
+document.querySelector('#simple').onclick = () => observe('/cors');
+document.querySelector('#preflight').onclick = () => observe('/cors', {
+  method: 'POST', headers: {'Content-Type': 'application/json', 'X-Lab-Header': 'browser-demo'},
+  body: JSON.stringify({note: 'quan sát preflight'})
+});
+document.querySelector('#missing').onclick = () => observe('/health');
+</script>
+</html>

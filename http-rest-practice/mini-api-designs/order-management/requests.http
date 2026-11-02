@@ -1,0 +1,10 @@
+# Skeleton request theo contract bạn tự thiết kế; CHƯA TRIỂN KHAI trong lab.
+# TODO: Request xem order theo id.
+# TODO: Request xem orders của user có pagination và status filter.
+# TODO: Request tạo order nhiều items; tự chọn headers và JSON.
+# TODO: Request tạo order thiếu stock để dự đoán response.
+# TODO: Request tạo lại sau timeout với semantics chống lặp bạn chọn.
+# TODO: Request hủy order PENDING.
+# TODO: Request hủy lại và request hủy order SHIPPED.
+# TODO: Request user A truy cập hoặc hủy order của user B.
+# TODO: Ghi status/body/headers dự kiến vào my-contract.md.

@@ -1,0 +1,13 @@
+# Chỉ có TODO: tự viết request từ thiết kế của bạn.
+# Các endpoint CRUD do bạn thiết kế CHƯA được lab hỗ trợ.
+# TODO 1: Request lấy collection có phân trang và sort ổn định.
+# TODO 2: Request lấy sản phẩm theo id.
+# TODO 3: Request tìm tên có dấu và dấu cách.
+# TODO 4: Request filter category + khoảng giá.
+# TODO 5: Request tạo sản phẩm; tự chọn headers và JSON.
+# TODO 6: Request thay toàn bộ representation sản phẩm.
+# TODO 7: Request chỉ sửa stock; tự công bố semantics body.
+# TODO 8: Request xóa/ngừng bán sản phẩm.
+# TODO 9: Request xem order của user có kiểm tra quyền.
+# TODO 10: Request hủy order và request gửi lặp.
+# TODO 11: Request sửa thiết kế RPC-style trong exercises.md.

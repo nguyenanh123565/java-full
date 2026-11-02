@@ -1,0 +1,29 @@
+@baseUrl = http://localhost:8080
+
+### Đọc README lab, dự đoán trước rồi gửi
+GET {{baseUrl}}/health
+Accept: application/json
+
+### Query được echo ở dạng thô
+GET {{baseUrl}}/echo?name=An%20Binh&limit=2
+Accept: application/json
+X-Lab-Header: request-parts
+
+### Body JSON được echo như string; không parse hay lưu database
+POST {{baseUrl}}/echo?source=ide
+Content-Type: application/json
+Accept: application/json
+
+{"name":"Lan","active":true}
+
+### HEAD không có response body
+HEAD {{baseUrl}}/products/10
+
+### Dự đoán 204 trước khi Send
+GET {{baseUrl}}/status/204
+
+### Chỉ mô phỏng status, không có xác thực
+GET {{baseUrl}}/status/401
+
+### Dự đoán vì sao lab phản hồi lỗi: filter chưa triển khai, catalog từ chối query
+GET {{baseUrl}}/products?id=10

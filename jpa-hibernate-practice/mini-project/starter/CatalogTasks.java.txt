@@ -1,0 +1,9 @@
+// TODO: turn these contracts into your own Java 17 project after learning Maven.
+// No implementation or mapping solution is provided here.
+interface CatalogTasks {
+    // TODO: define ProductView and input validation.
+    // TODO: add, list, find, update, delete.
+    // TODO: category relationship owning/inverse sides.
+    // TODO: rollback experiment and SQL-count observation.
+    // TODO: DTO mapping inside transaction, not in a lazy serializer.
+}

@@ -1,0 +1,11 @@
+@baseUrl = http://localhost:8080
+
+### Token hoàn toàn giả; echo chỉ cho thấy header, KHÔNG xác thực
+GET {{baseUrl}}/echo
+Authorization: Bearer FAKE-DEMO-TOKEN-NOT-A-REAL-JWT
+
+### Chỉ là status mẫu; xem WWW-Authenticate, không có logic kiểm tra token
+GET {{baseUrl}}/status/401
+
+### Chỉ là status mẫu; so sánh ý nghĩa với 401
+GET {{baseUrl}}/status/403

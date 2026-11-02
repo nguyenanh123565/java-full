@@ -1,0 +1,7 @@
+# Request bài tập cố tình sai chỉ nằm trong exercises.md để đọc và phân tích.
+# TODO: Tự viết bản sửa case GET xóa dữ liệu.
+# TODO: Tự viết bản sửa case POST đọc product.
+# TODO: Tự viết request tạo product với dữ liệu đúng chỗ và quyền đúng nguồn.
+# TODO: Tự viết request stock với semantics retry đã công bố.
+# TODO: Tự viết request hủy order có điều kiện trạng thái.
+# CRUD/cancel/auth ở đây là hợp đồng thiết kế, CHƯA có trong lab.

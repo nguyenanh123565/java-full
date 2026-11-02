@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:8080
+
+### Endpoint chỉ phát response minh họa; không chạy nghiệp vụ thật.
+GET {{baseUrl}}/status/200
+
+### Kiểm tra Location. Không có sản phẩm mới nào được tạo.
+GET {{baseUrl}}/status/201
+
+### Body phải trống.
+GET {{baseUrl}}/status/204
+
+### Đọc error.code và error.message.
+GET {{baseUrl}}/status/400
+
+### Kiểm tra WWW-Authenticate; lab chưa đăng nhập thật.
+GET {{baseUrl}}/status/401
+
+### So sánh với 401.
+GET {{baseUrl}}/status/403
+
+### Không tìm thấy theo response minh họa.
+GET {{baseUrl}}/status/404
+
+### Kiểm tra Allow; status này được phát có chủ đích.
+GET {{baseUrl}}/status/405
+
+### Một xung đột trạng thái minh họa.
+GET {{baseUrl}}/status/409
+
+### Media type không hỗ trợ minh họa; không phải validation của echo.
+GET {{baseUrl}}/status/415
+
+### Cú pháp hiểu được nhưng chỉ dẫn không chấp nhận được.
+GET {{baseUrl}}/status/422
+
+### Lỗi server minh họa.
+GET {{baseUrl}}/status/500
